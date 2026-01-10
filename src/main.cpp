@@ -1,13 +1,30 @@
 #include "game.h"
-#include <QApplication>
+#include "log_manager.h"
 
 int main(int argc, char* argv[])
 {
-    QApplication application(argc, argv);
-    Game game;
+    try
+    {
+#if defined(QT_DEBUG)
+        LogManager::initialize(LogManager::Mode::LogToFileAndConsole, LogManager::Verbosity::Debug);
+#else
+        LogManager::initialize(LogManager::Mode::LogToFileOnly, LogManager::Verbosity::Info);
+#endif
 
-    return QApplication::exec();
+        QGuiApplication app(argc, argv);
+
+        Game game;
+
+        return QGuiApplication::exec();
+    }
+    catch (const std::exception& e)
+    {
+        qCritical() << "Unhandled exception:" << e.what();
+        return 1;
+    }
+    catch (...)
+    {
+        qCritical() << "Unhandled unknown exception";
+        return 1;
+    }
 }
-
-//TODO center on screen does not work properly
-//TODO use State pattern on Field state

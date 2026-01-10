@@ -1,0 +1,37 @@
+#pragma once
+
+#include "state_machine/abstract_state.h"
+#include "game_result.h"
+
+class EndedVictoryState : public AbstractState
+{
+public:
+    EndedVictoryState(IStateActions& stateActions) : AbstractState("EndedVictoryState", GameStateType::EndedVictory, stateActions)
+    {}
+
+    void entered() override
+    {
+        qDebug() << "Entered state: EndedVictory";
+        stateActions_.showEndGameOverlay(GameResult::VICTORY);
+    }
+
+    void exited() override
+    {
+        qDebug() << "Exited state: EndedVictory";
+        stateActions_.hideEndGameOverlay();
+    }
+
+    void transitionTo(AbstractState* newState) override
+    {
+        switch (newState->type())
+        {
+            case GameStateType::ReadyToStart:
+                break;
+
+            default:
+                handleIllegalTransition(newState);
+        }
+
+        printTransition(newState);
+    }
+};

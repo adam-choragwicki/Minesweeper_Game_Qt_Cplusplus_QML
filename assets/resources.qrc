@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>sounds/uncover_tile.wav</file>
+        <file>sounds/menu_click.wav</file>
+        <file>sounds/mine.wav</file>
+        <file>sounds/flag_place.wav</file>
+    </qresource>
+</RCC>

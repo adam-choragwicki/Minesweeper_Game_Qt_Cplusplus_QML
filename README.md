@@ -1,29 +1,15 @@
 # Minesweeper
-C++ implementation of classic Minesweeper game using Qt 6.2.4 library.
+C++ implementation of the classic Minesweeper game using Qt 6.9.2.
 
-**Windows and Linux executables are provided.**
+**Windows executable is provided.**
 
 ![screenshot.png](screenshot.png)
 
 # Tests
-Unit tested using Google Test 1.11.0
-
-# How to run on Linux
-1. Download release zip from:\
-   https://github.com/adam-choragwicki/Minesweeper_Game_Qt_Cplusplus/releases/latest/download/executable_linux.zip
-2. Unzip
-3. Run **executable_linux/Minesweeper.sh**
-
-**OR**
-
-1. Clone repository and run **Minesweeper.sh**
+Unit tested using Google Test 1.17.0
 
 # How to run on Windows
 1. Download release zip from:\
    https://github.com/adam-choragwicki/Minesweeper_Game_Qt_Cplusplus/releases/latest/download/executable_windows.zip
 2. Unzip
-3. Run **executable_linux/Minesweeper.exe**
-
-**OR**
-
-1. Clone repository and run **Minesweeper.bat**
+3. Run **executable_windows/Minesweeper.exe**
