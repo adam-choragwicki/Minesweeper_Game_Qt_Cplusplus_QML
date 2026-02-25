@@ -1,3 +1,5 @@
+[![Tests](https://github.com/adam-choragwicki/Minesweeper_Game_Qt_Cplusplus_QML/actions/workflows/tests-workflow.yml/badge.svg)](https://github.com/adam-choragwicki/Minesweeper_Game_Qt_Cplusplus_QML/actions/workflows/tests-workflow.yml)
+
 # Minesweeper
 C++ implementation of the classic Minesweeper game using Qt 6.9.2.
 
